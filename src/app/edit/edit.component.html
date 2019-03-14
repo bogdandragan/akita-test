@@ -1,0 +1,5 @@
+<p>{{list.name}}, {{list.items.length}} items</p>
+<div *ngFor="let item of list.items">
+  <label>{{item.quantity}} x {{item.label}}</label>
+  <input [ngModel]="item.purchased" (ngModelChange)="saveItem($event, item)" name="purchased" type="checkbox"/>
+</div>

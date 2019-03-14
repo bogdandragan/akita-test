@@ -1,0 +1,6 @@
+<button class="new-list" [routerLink]="['/lists/new']">New List</button>
+<div class="list-container" *ngFor="let list of lists$ | async">
+  <p class="list"
+     (click)="select(list.id)">{{list.name}}, {{list.items.length}} items</p>
+  <button class="delete" (click)="delete(list.id)">delete</button>
+</div>
